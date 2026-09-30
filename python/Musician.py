@@ -1,11 +1,10 @@
 # class to represent a musician
 class Musician:
-    # private attributes
-    def __init__(self):
-        # empty constructor
-        self.name = None
-        self.yearsOfExperience = None
-        self.performanceType = None
+    # constructor
+    def __init__(self, name, yearsOfExperience, performanceType):
+        self.name = name
+        self.yearsOfExperience = yearsOfExperience
+        self.performanceType = performanceType
 
     # name getter and setter
     def getName(self):

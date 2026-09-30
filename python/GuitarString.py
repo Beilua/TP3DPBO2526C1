@@ -1,11 +1,10 @@
 # class to represent a guitar string
 class GuitarString:
-    # private attributes
-    def __init__(self):
-        # empty constructor
-        self.stringBrand = None
-        self.material = None
-        self.stringGauge = None
+    # constructor
+    def __init__(self, stringBrand, material, stringGauge):
+        self.stringBrand = stringBrand
+        self.material = material
+        self.stringGauge = stringGauge
 
     # stringBrand getter and setter
     def getStringBrand(self):

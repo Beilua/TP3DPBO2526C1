@@ -3,12 +3,11 @@ from Musician import Musician
 
 # class to represent a singer inheriting from Musician class
 class Singer(Musician):
-    # private attributes
-    def __init__(self):
-        # empty constructor
-        super().__init__()
-        self.vocalRange = None
-        self.tone = None
+    # constructor
+    def __init__(self, name, yearsOfExperience, performanceType, vocalRange, tone):
+        Musician.__init__(self, name, yearsOfExperience, performanceType)
+        self.vocalRange = vocalRange
+        self.tone = tone
 
     # vocalRange getter and setter
     def getVocalRange(self):
