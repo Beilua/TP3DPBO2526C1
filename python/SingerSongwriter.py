@@ -4,14 +4,12 @@ from Singer import Singer
 
 # class to represent a singer songwriter inheriting from Singer and Guitarist classes
 class SingerSongwriter(Singer, Guitarist):
-    # private attributes
-    def __init__(self):
-        # empty constructor
-        Singer.__init__(self)
-        self.position = None
-        self.favoriteBrand = None
-        self.songsWritten = None
-        self.writingGenre = None
+    # constructor
+    def __init__(self, name, yearsOfExperience, performanceType, vocalRange, tone, position, favoriteBrand, guitars, songsWritten, writingGenre):
+        Singer.__init__(self, name, yearsOfExperience, performanceType, vocalRange, tone)
+        Guitarist.__init__(self, name, yearsOfExperience, performanceType, position, favoriteBrand, guitars)
+        self.songsWritten = songsWritten
+        self.writingGenre = writingGenre
 
     # songsWritten getter and setter
     def getSongsWritten(self):

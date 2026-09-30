@@ -3,12 +3,12 @@ from Musician import Musician
 
 # class to represent a guitarist inheriting from Musician class
 class Guitarist(Musician):
-    # private attributes
-    def __init__(self):
-        # empty constructor
-        super().__init__()
-        self.position = None
-        self.favoriteBrand = None
+    # constructor
+    def __init__(self, name, yearsOfExperience, performanceType, position, favoriteBrand, guitars):
+        Musician.__init__(self, name, yearsOfExperience, performanceType)
+        self.position = position
+        self.favoriteBrand = favoriteBrand
+        self.guitars = list(guitars)
 
     # position getter and setter
     def getPosition(self):
@@ -23,3 +23,13 @@ class Guitarist(Musician):
 
     def setFavoriteBrand(self, favoriteBrand):
         self.favoriteBrand = favoriteBrand
+
+    # guitars getter and setter
+    def getGuitars(self):
+        return self.guitars
+
+    def setGuitars(self, guitars):
+        self.guitars = guitars
+
+    def addGuitar(self, guitar):
+        self.guitars.append(guitar)
