@@ -1,7 +1,6 @@
 import time # library for delay
 
 # import classes
-from GuitarString import GuitarString
 from Guitar import Guitar
 from Singer import Singer
 from Guitarist import Guitarist
@@ -32,12 +31,12 @@ def main():
 
     # create an array of objects for guitars
     guitars = [
-        Guitar("Fender", "Electric", [GuitarString("D'Addario", "Steel", "0.10")]),
-        Guitar("Gibson", "Acoustic", [GuitarString("Ernie Ball", "Nylon", "0.12")]),
-        Guitar("Ibanez", "Electric", [GuitarString("Elixir", "Steel", "0.09")]),
-        Guitar("Taylor", "Acoustic", [GuitarString("Martin", "Nylon", "0.11")]),
-        Guitar("PRS", "Electric", [GuitarString("D'Addario", "Steel", "0.10")]),
-        Guitar("Yamaha", "Acoustic", [GuitarString("Ernie Ball", "Nylon", "0.12")]),
+        Guitar("Fender", "Electric", "D'Addario", "Steel"),
+        Guitar("Gibson", "Acoustic", "Ernie Ball", "Nylon"),
+        Guitar("Ibanez", "Electric", "Elixir", "Steel"),
+        Guitar("Taylor", "Acoustic", "Martin", "Nylon"),
+        Guitar("PRS", "Electric", "D'Addario", "Steel"),
+        Guitar("Yamaha", "Acoustic", "Ernie Ball", "Nylon"),
     ]
 
     # add guitars to the list of guitars in guitarists
@@ -97,9 +96,9 @@ def main():
 
     # simulate adding new data statically
     musicians.append(SingerSongwriter("Lily Thompson", 5, "Live", "Soprano", "Bright", "Lead", "Fender", [], 8, "Pop"))
-    guitars.append(Guitar("Fender", "Electric", [GuitarString("D'Addario", "Steel", "0.10")]))
+    guitars.append(Guitar("Fender", "Electric", "D'Addario", "Steel"))
     musicians[-1].addGuitar(guitars[-1])
-    guitars.append(Guitar("Fender", "Acoustic", [GuitarString("Ernie Ball", "Nylon", "0.12")]))
+    guitars.append(Guitar("Fender", "Acoustic", "Ernie Ball", "Nylon"))
     musicians[-1].addGuitar(guitars[-1])
 
     # print guitars data after adding new data
@@ -112,7 +111,11 @@ def main():
 
 # function to print musicians data
 def printMusicians(musicians, delay):
-    print("=============================== MUSICIANS ==============================")
+    print("============================================")
+    print("             __     __               __ ")
+    print("  |\\/| |  | /__` | /  ` |  /\\  |\\ | /__`")
+    print("  |  | \\__/ .__/ | \\__, | /~~\\ | \\| .__/")
+    print("\n============================================")
     time.sleep(delay)
     # variable to keep track of current class
     currentClass = None
@@ -162,7 +165,11 @@ def printMusicians(musicians, delay):
 
 # function to print guitars data
 def printGuitars(guitars, delay):
-    print("=============================== GUITARS ==============================\n")
+    print("=====================================")
+    print("   __         ___       __   __ ")
+    print("  / _` |  | |  |   /\\  |__) /__`")
+    print("  \\__> \\__/ |  |  /~~\\ |  \\ .__/")
+    print("\n=====================================\n")
     time.sleep(delay)
     number = 1
     # print each data
