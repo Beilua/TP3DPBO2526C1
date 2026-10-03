@@ -10,33 +10,33 @@ from SingerSongwriter import SingerSongwriter
 def main():
     # create an array of objects for singers
     singers = [
-        Singer("John Doe", 5, "Solo", "Tenor", "Warm"),
-        Singer("Jane Smith", 10, "Band", "Soprano", "Bright"),
-        Singer("Alice Johnson", 3, "Choir", "Alto", "Smooth"),
+        Singer("Hayley Williams", 21, "Band", "Soprano", "Bright"),
+        Singer("Gerard Way", 24, "Band", "Tenor", "Warm"),
+        Singer("Conor Mason", 13, "Band", "Tenor", "Bright"),
     ]
 
     # create an array of objects for guitarists
     guitarists = [
-        Guitarist("Mike Brown", 8, "Band", "Lead", "Fender", []),
-        Guitarist("Emily Davis", 12, "Solo", "Rhythm", "Gibson", []),
-        Guitarist("Chris Wilson", 6, "Band", "Bass", "Ibanez", []),
+        Guitarist("Taylor York", 18, "Band", "Lead", "Fender", []),
+        Guitarist("Ray Toro", 24, "Band", "Lead", "Gibson", []),
+        Guitarist("Toru Yamashita", 20, "Band", "Rhythm", "PRS", []),
     ]
 
     # create an array of objects for singer songwriters
     singerSongwriters = [
-        SingerSongwriter("David Miller", 15, "Live", "Medium", "Warm", "Rhythm", "Gibson", [], 20, "Rock"),
-        SingerSongwriter("Sarah Lee", 7, "Studio", "High", "Bright", "Lead", "Fender", [], 10, "Pop"),
-        SingerSongwriter("James Anderson", 10, "Live", "Low", "Smooth", "Bass", "Ibanez", [], 15, "Jazz"),
+        SingerSongwriter("Luke Hemmings", 14, "Live", "Tenor", "Warm", "Rhythm", "Gibson", [], 120, "Pop"),
+        SingerSongwriter("Michael Clifford", 14, "Studio", "Tenor", "Bright", "Lead", "Fender", [], 90, "Pop"),
+        SingerSongwriter("Gaon", 4, "Live", "Tenor", "Bright", "Rhythm", "Ibanez", [], 25, "Rock"),
     ]
 
     # create an array of objects for guitars
     guitars = [
         Guitar("Fender", "Electric", "D'Addario", "Steel"),
-        Guitar("Gibson", "Acoustic", "Ernie Ball", "Nylon"),
-        Guitar("Ibanez", "Electric", "Elixir", "Steel"),
-        Guitar("Taylor", "Acoustic", "Martin", "Nylon"),
-        Guitar("PRS", "Electric", "D'Addario", "Steel"),
-        Guitar("Yamaha", "Acoustic", "Ernie Ball", "Nylon"),
+        Guitar("Gibson", "Acoustic", "Ernie Ball", "Steel"),
+        Guitar("PRS", "Electric", "Elixir", "Steel"),
+        Guitar("Gibson", "Acoustic", "Martin", "Steel"),
+        Guitar("Fender", "Electric", "D'Addario", "Steel"),
+        Guitar("Ibanez", "Acoustic", "Ernie Ball", "Steel"),
     ]
 
     # add guitars to the list of guitars in guitarists
@@ -95,10 +95,10 @@ def main():
     print(" . \n")
 
     # simulate adding new data statically
-    musicians.append(SingerSongwriter("Lily Thompson", 5, "Live", "Soprano", "Bright", "Lead", "Fender", [], 8, "Pop"))
-    guitars.append(Guitar("Fender", "Electric", "D'Addario", "Steel"))
+    musicians.append(SingerSongwriter("Taka Moriuchi", 20, "Live", "Tenor", "Bright", "Rhythm", "Gibson", [], 80, "Rock"))
+    guitars.append(Guitar("Gibson", "Electric", "D'Addario", "Steel"))
     musicians[-1].addGuitar(guitars[-1])
-    guitars.append(Guitar("Fender", "Acoustic", "Ernie Ball", "Nylon"))
+    guitars.append(Guitar("Gibson", "Acoustic", "Elixir", "Steel"))
     musicians[-1].addGuitar(guitars[-1])
 
     # print guitars data after adding new data
@@ -146,6 +146,8 @@ def printMusicians(musicians, delay):
             # print guitars list
             for guitar in musician.getGuitars():
                 print(f"      - {guitar.getBrand()} {guitar.getType()}")
+            print(f"   Songs Written: {musician.getSongsWritten()}")
+            print(f"   Writing Genre: {musician.getWritingGenre()}")
         # if musician is singer, print additional data
         elif isinstance(musician, Singer):
             print(f"   Vocal Range: {musician.getVocalRange()}")
