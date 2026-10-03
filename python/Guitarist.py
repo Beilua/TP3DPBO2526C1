@@ -31,5 +31,6 @@ class Guitarist(Musician):
     def setGuitars(self, guitars):
         self.guitars = guitars
 
+    # method to add new guitar to existing list of guitars
     def addGuitar(self, guitar):
         self.guitars.append(guitar)
