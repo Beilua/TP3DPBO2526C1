@@ -1,3 +1,6 @@
+#ifndef GUITARSTRING_CPP // header guard
+#define GUITARSTRING_CPP
+
 #include <string>
 
 using namespace std;
@@ -11,7 +14,11 @@ class GuitarString {
         string stringGauge;
 
     public:
-        // constructor
+        // empty constructor
+        GuitarString() {
+        }
+
+        // constructor with parameters
         GuitarString(string stringBrand, string material, string stringGauge) {
             this->stringBrand = stringBrand;
             this->material = material;
@@ -49,3 +56,5 @@ class GuitarString {
         ~GuitarString() {
         }
 };
+
+#endif

@@ -1,3 +1,6 @@
+#ifndef GUITARIST_CPP // header guard
+#define GUITARIST_CPP
+
 #include <string>
 #include <vector>
 #include "Musician.cpp"
@@ -6,7 +9,7 @@
 using namespace std;
 
 // class to represent a guitarist inheriting from Musician class
-class Guitarist : public virtual Musician {
+class Guitarist : public Musician {
     // private attributes
     private:
         string position;
@@ -14,8 +17,13 @@ class Guitarist : public virtual Musician {
         vector<Guitar> guitars;
 
     public:
-        // constructor
-        Guitarist(string name, int yearsOfExperience, string performanceType, string position, string favoriteBrand, vector<Guitar> guitars)
+        // empty constructor
+        Guitarist() {
+        }
+
+        // constructor with all attributes from both parent and child classes
+        Guitarist(string name, int yearsOfExperience, string performanceType,
+                    string position, string favoriteBrand, vector<Guitar> guitars)
             : Musician(name, yearsOfExperience, performanceType) {
             this->position = position;
             this->favoriteBrand = favoriteBrand;
@@ -49,6 +57,7 @@ class Guitarist : public virtual Musician {
             this->guitars = guitars;
         }
 
+        // method to add new guitar to existing list of guitars
         void addGuitar(Guitar guitar) {
             guitars.push_back(guitar);
         }
@@ -57,3 +66,5 @@ class Guitarist : public virtual Musician {
         ~Guitarist() {
         }
 };
+
+#endif

@@ -1,7 +1,8 @@
+#ifndef GUITAR_CPP // header guard
+#define GUITAR_CPP
+
 #include <string>
 #include <vector>
-#include <stdexcept>
-#include <algorithm>
 #include "GuitarString.cpp"
 
 using namespace std;
@@ -14,43 +15,28 @@ class Guitar {
         string type;
         vector<GuitarString> strings;
 
-        vector<string> getDefaultGauges(string guitarType) {
-            if (guitarType == "Electric") {
-                return {"0.010", "0.013", "0.017", "0.026", "0.036", "0.046"};
-            }
-
-            if (guitarType == "Acoustic") {
-                return {"0.012", "0.016", "0.024", "0.032", "0.042", "0.053"};
-            }
-
-            return {};
-        }
-
     public:
-        // constructor
-        Guitar(string brand, string guitarType, string stringBrand, string material) {
-            this->brand = brand;
-            this->type = guitarType;
-            vector<string> gauges = getDefaultGauges(guitarType);
-            if (gauges.empty()) {
-                throw invalid_argument("A custom gauge set is required for this guitar type");
-            }
-            setStrings(makeStringData(stringBrand, material, gauges));
+        // empty constructor
+        Guitar() {
         }
 
-        // constructor with custom gauges
-        Guitar(string brand, string guitarType, string stringBrand, string material, vector<string> gauges) {
+        // constructor with parameters
+        Guitar(string brand, string type, string stringBrand, string material) {
             this->brand = brand;
-            this->type = guitarType;
-            setStrings(makeStringData(stringBrand, material, gauges));
-        }
+            this->type = type;
 
-        vector<GuitarString> makeStringData(string stringBrand, string material, vector<string> gauges) {
-            vector<GuitarString> stringData;
-            for (string gauge : gauges) {
-                stringData.push_back(GuitarString(stringBrand, material, gauge));
+            // default gauges for electric and acoustic guitars
+            vector<string> gauges;
+            if (type == "Electric") {
+                gauges = {"0.010", "0.013", "0.017", "0.026", "0.036", "0.046"};
+            } else if (type == "Acoustic") {
+                gauges = {"0.012", "0.016", "0.024", "0.032", "0.042", "0.053"};
             }
-            return stringData;
+
+            // create guitar strings
+            for (int i = 0; i < 6; i++) {
+                strings.push_back(GuitarString(stringBrand, material, gauges[i]));
+            }
         }
 
         // brand getter and setter
@@ -76,25 +62,13 @@ class Guitar {
             return strings;
         }
 
-        void setStrings(vector<GuitarString> stringData) {
-            if (stringData.size() != 6) {
-                throw invalid_argument("A guitar must have exactly 6 strings");
-            }
-
-            vector<string> gauges;
-            for (GuitarString stringInfo : stringData) {
-                gauges.push_back(stringInfo.getStringGauge());
-            }
-
-            sort(gauges.begin(), gauges.end());
-            if (adjacent_find(gauges.begin(), gauges.end()) != gauges.end()) {
-                throw invalid_argument("Each string must have a different gauge");
-            }
-
-            this->strings = stringData;
+        void setStrings(vector<GuitarString> strings) {
+            this->strings = strings;
         }
 
         // destructor
         ~Guitar() {
         }
 };
+
+#endif

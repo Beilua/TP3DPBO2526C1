@@ -1,4 +1,4 @@
-#ifndef MUSICIAN_CPP
+#ifndef MUSICIAN_CPP // header guard
 #define MUSICIAN_CPP
 
 #include <string>
@@ -14,7 +14,11 @@ class Musician {
         string performanceType;
 
     public:
-        // constructor
+        // empty constructor
+        Musician() {
+        }
+
+        // constructor with parameters
         Musician(string name, int yearsOfExperience, string performanceType) {
             this->name = name;
             this->yearsOfExperience = yearsOfExperience;
@@ -53,4 +57,4 @@ class Musician {
         }
 };
 
-    #endif
+#endif

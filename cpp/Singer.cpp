@@ -1,18 +1,26 @@
+#ifndef SINGER_CPP // header guard
+#define SINGER_CPP
+
 #include <string>
 #include "Musician.cpp"
 
 using namespace std;
 
 // class to represent a singer inheriting from Musician class
-class Singer : public virtual Musician {
+class Singer : public Musician {
     // private attributes
     private:
         string vocalRange;
         string tone;
 
     public:
-        // constructor
-        Singer(string name, int yearsOfExperience, string performanceType, string vocalRange, string tone)
+        // empty constructor
+        Singer() {
+        }
+
+        // constructor with all attributes from both parent and child classes
+        Singer(string name, int yearsOfExperience, string performanceType,
+                string vocalRange, string tone) 
             : Musician(name, yearsOfExperience, performanceType) {
             this->vocalRange = vocalRange;
             this->tone = tone;
@@ -40,3 +48,5 @@ class Singer : public virtual Musician {
         ~Singer() {
         }
 };
+
+#endif
