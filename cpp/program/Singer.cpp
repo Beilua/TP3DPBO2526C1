@@ -7,7 +7,7 @@
 using namespace std;
 
 // class to represent a singer inheriting from Musician class
-class Singer : public Musician {
+class Singer : public virtual Musician {
     // private attributes
     private:
         string vocalRange;

@@ -9,7 +9,7 @@
 using namespace std;
 
 // class to represent a guitarist inheriting from Musician class
-class Guitarist : public Musician {
+class Guitarist : public virtual Musician {
     // private attributes
     private:
         string position;
