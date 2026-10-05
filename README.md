@@ -37,12 +37,12 @@ Saya Nabila Attaya Putri Cahyadi dengan NIM 2508355 mengerjakan Tugas Praktikum 
 
 ### C++
 
-<video src="cpp/dokumentasi/dokumcpp.mp4" controls></video>
+![Dokumentasi C++](cpp/dokumentasi/dokumcpp.gif)
 
 ### Java
 
-<video src="java/dokumentasi/dokumjava.mp4" controls></video>
+![Dokumentasi Java](java/dokumentasi/dokumjava.gif)
 
 ### Python
 
-<video src="python/dokumentasi/dokumpy.mp4" controls></video>
+![Dokumentasi Python](python/dokumentasi/dokumpy.gif)
